@@ -36,13 +36,15 @@ class Command:
     def add_subcommand(self, main_command, subcommand_name, function, description=None, help=None, dependencies=None, arg_definitions=None):
         """Add a subcommand to an existing command."""
         if main_command not in self.commands:
-            print(f"Main command '{main_command}' not found.")
+            self.app.logger.error(f"Main command '{main_command}' not found.")
             return
 
         main_command_info = self.commands[main_command]
         if 'subcommands' not in main_command_info:
             main_command_info['subcommands'] = {}
             main_command_info['subparsers'] = main_command_info['parser'].add_subparsers(dest='subcommand')
+
+        self.app.logger.info(f'Subcommand added: {main_command} -> {subcommand_name}')
 
         sub_parser = main_command_info['subparsers'].add_parser(subcommand_name, description=description, help=help)
         if arg_definitions:
@@ -54,6 +56,7 @@ class Command:
             'parser': sub_parser,
             'dependencies': dependencies or []
         }
+
 
     def execute(self, command_name, *args):
         if command_name not in self.commands:

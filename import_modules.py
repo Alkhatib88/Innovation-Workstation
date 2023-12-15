@@ -24,6 +24,8 @@ try:
     from pickel import *
     from encryption import *
     from setting import *
+    from file_operations import *
+    from directory_operations import *
 
 except ModuleNotFoundError as e:
     print(e)

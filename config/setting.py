@@ -97,6 +97,43 @@ class EnhancedSettings:
         else:
             self.app.logger.error(f"Setting {key} already exists")
 
+    def switch_option(self, key):
+        # Toggle a setting with two possibilities (like a boolean)
+        current_value = self.get_setting(key)
+        new_value = not current_value
+        self.update_setting(key, new_value)
+
+    def multi_switch_option(self, key, options):
+        # Set a setting with multiple choices
+        current_value = self.get_setting(key)
+        try:
+            new_value_index = (options.index(current_value) + 1) % len(options)
+            new_value = options[new_value_index]
+            self.update_setting(key, new_value)
+        except ValueError:
+            # If the current value is not in the options, set it to the first option
+            self.update_setting(key, options[0])
+
+    def settings_rebuild(self):
+        # Re-fetch settings from the config file
+        self.app.config.load_config(self.config_file)
+
+        # Update dynamic settings if needed
+        for key, setting in self.dynamic_settings.items():
+            # Assuming the setting value needs to be refreshed from the config
+            new_value = self.app.config.get_config(key, setting['default'])
+            self.dynamic_settings[key]['value'] = new_value
+
+        print("Settings have been rebuilt to reflect the latest configuration.")
+
+    def update_setting_command(self, setting_name, new_value):
+        """CLI command to update a setting."""
+        self.app.settings.update_setting(setting_name, new_value)
+        print(f"Setting {setting_name} updated to {new_value}.")
+        # Optional: Call settings_rebuild if needed
+        self.app.settings.settings_rebuild()
+
+
 # Example usage
 # app = App()  # Assuming App is initialized and setup
 # settings = EnhancedSettings(app, 'config.json', 'user_settings.pkl')

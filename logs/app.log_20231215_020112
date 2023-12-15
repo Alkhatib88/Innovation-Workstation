@@ -1,0 +1,42 @@
+2023-12-15 01:56:30,523 - AppLogger - INFO - command added: get-cpu-info
+2023-12-15 01:56:30,523 - AppLogger - INFO - command added: get-ram-info
+2023-12-15 01:56:30,523 - AppLogger - INFO - command added: get-storage-info
+2023-12-15 01:56:30,523 - AppLogger - INFO - command added: get-network-info
+2023-12-15 01:56:30,524 - AppLogger - INFO - command added: task-manager
+2023-12-15 01:56:30,524 - AppLogger - INFO - command added: sql
+2023-12-15 01:56:30,525 - AppLogger - INFO - command added: load-extension
+2023-12-15 01:56:30,526 - AppLogger - INFO - command added: unload-extension
+2023-12-15 01:56:30,526 - AppLogger - INFO - command added: quit
+2023-12-15 01:56:30,526 - AppLogger - INFO - command added: list-commands
+2023-12-15 01:56:30,526 - AppLogger - INFO - command added: deactivate-command
+2023-12-15 01:56:30,526 - AppLogger - INFO - command added: activate-command
+2023-12-15 01:56:30,527 - AppLogger - INFO - command added: create_file
+2023-12-15 01:56:30,527 - AppLogger - INFO - command added: edit_file
+2023-12-15 01:56:30,528 - AppLogger - INFO - command added: delete_file
+2023-12-15 01:56:30,528 - AppLogger - INFO - command added: copy_file
+2023-12-15 01:56:30,528 - AppLogger - INFO - command added: move_file
+2023-12-15 01:56:30,528 - AppLogger - INFO - command added: rename_file
+2023-12-15 01:56:30,528 - AppLogger - INFO - command added: get_file_properties
+2023-12-15 01:56:30,529 - AppLogger - INFO - command added: search_files
+2023-12-15 01:56:30,529 - AppLogger - INFO - command added: bulk_operations
+2023-12-15 01:56:30,529 - AppLogger - INFO - command added: compare_files
+2023-12-15 01:56:30,529 - AppLogger - INFO - command added: get_file_checksum
+2023-12-15 01:56:30,530 - AppLogger - INFO - command added: create_symbolic_link
+2023-12-15 01:56:30,530 - AppLogger - INFO - command added: file_permissions
+2023-12-15 01:56:30,530 - AppLogger - INFO - command added: bulk_rename
+2023-12-15 01:56:30,530 - AppLogger - INFO - command added: encrypt_dir
+2023-12-15 01:56:30,530 - AppLogger - INFO - command added: decrypt_dir
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: mkdir
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: rmdir
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: ls
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: cd
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: mvdir
+2023-12-15 01:56:30,531 - AppLogger - INFO - command added: cpdir
+2023-12-15 01:56:34,375 - AppLogger - INFO - User input: /list-commands
+2023-12-15 01:56:37,654 - AppLogger - INFO - User input: /ls
+2023-12-15 01:59:52,742 - AppLogger - INFO - User input: /rmdir test_workfolder
+2023-12-15 01:59:57,462 - AppLogger - INFO - User input: /mkdir test_dir
+2023-12-15 02:00:00,629 - AppLogger - INFO - User input: /ls
+2023-12-15 02:00:09,734 - AppLogger - INFO - User input: /cd test_dir
+
+2023-12-15 02:00:09,735 - AppLogger - INFO - Changed directory to C:\Users\manso\OneDrive\Desktop\python project\test_dir

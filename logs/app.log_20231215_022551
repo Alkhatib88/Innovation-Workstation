@@ -1,0 +1,78 @@
+2023-12-15 02:01:12,811 - AppLogger - INFO - command added: get-cpu-info
+2023-12-15 02:01:12,811 - AppLogger - INFO - command added: get-ram-info
+2023-12-15 02:01:12,811 - AppLogger - INFO - command added: get-storage-info
+2023-12-15 02:01:12,811 - AppLogger - INFO - command added: get-network-info
+2023-12-15 02:01:12,811 - AppLogger - INFO - command added: task-manager
+2023-12-15 02:01:12,812 - AppLogger - INFO - command added: sql
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: load-extension
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: unload-extension
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: quit
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: list-commands
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: deactivate-command
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: activate-command
+2023-12-15 02:01:12,813 - AppLogger - INFO - command added: create_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: edit_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: delete_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: copy_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: move_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: rename_file
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: get_file_properties
+2023-12-15 02:01:12,814 - AppLogger - INFO - command added: search_files
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: bulk_operations
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: compare_files
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: get_file_checksum
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: create_symbolic_link
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: file_permissions
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: bulk_rename
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: encrypt_dir
+2023-12-15 02:01:12,815 - AppLogger - INFO - command added: decrypt_dir
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: mkdir
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: rmdir
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: ls
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: cd
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: mvdir
+2023-12-15 02:01:12,816 - AppLogger - INFO - command added: cpdir
+2023-12-15 02:01:19,014 - AppLogger - INFO - User input: /cd test_dir
+
+2023-12-15 02:01:19,015 - AppLogger - INFO - Changed directory to C:\Users\manso\OneDrive\Desktop\python project\test_dir
+2023-12-15 02:01:31,318 - AppLogger - INFO - User input: /mkdir sub_dir
+2023-12-15 02:01:44,942 - AppLogger - INFO - User input: /cpdir test_dir
+2023-12-15 02:01:49,175 - AppLogger - INFO - User input: /cd ..
+2023-12-15 02:01:49,175 - AppLogger - INFO - Changed directory to C:\Users\manso\OneDrive\Desktop\python project
+2023-12-15 02:01:51,150 - AppLogger - INFO - User input: /cpdir test_dir
+2023-12-15 02:02:10,878 - AppLogger - INFO - User input: /cpdir test_dir test_dir_copy
+2023-12-15 02:02:30,518 - AppLogger - INFO - User input: /mvdir test_dir_copy test_dir_moved
+2023-12-15 02:02:30,518 - AppLogger - INFO - Attempting to move from test_dir_copy to test_dir_moved
+2023-12-15 02:02:48,398 - AppLogger - INFO - User input: /mvdir test_dir_copy test_dir
+2023-12-15 02:02:48,398 - AppLogger - INFO - Attempting to move from test_dir_copy to test_dir
+2023-12-15 02:02:57,782 - AppLogger - INFO - User input: /rmdir test_dir
+2023-12-15 02:03:14,631 - AppLogger - INFO - User input: /ls
+2023-12-15 02:03:20,030 - AppLogger - INFO - User input: /mkdir test
+2023-12-15 02:03:23,678 - AppLogger - INFO - User input: cd test
+2023-12-15 02:03:42,806 - AppLogger - INFO - User input: /create_file test_file.txt "This is a test file."
+2023-12-15 02:03:42,807 - AppLogger - INFO - File created at test_file.txt
+2023-12-15 02:04:01,942 - AppLogger - INFO - User input: /create_file test_file2.txt ""
+2023-12-15 02:04:01,942 - AppLogger - INFO - File created at test_file2.txt
+2023-12-15 02:04:12,646 - AppLogger - INFO - User input: /edit_file test_file.txt " Additional content." --mode append
+2023-12-15 02:04:12,647 - AppLogger - INFO - File edited at test_file.txt
+2023-12-15 02:04:22,262 - AppLogger - INFO - User input: /rename_file test_file.txt renamed_test_file.txt
+2023-12-15 02:04:22,263 - AppLogger - INFO - File renamed from test_file.txt to renamed_test_file.txt
+2023-12-15 02:04:29,583 - AppLogger - INFO - User input: /copy_file renamed_test_file.txt copied_test_file.txt
+2023-12-15 02:04:29,588 - AppLogger - INFO - File copied from renamed_test_file.txt to copied_test_file.txt
+2023-12-15 02:04:35,535 - AppLogger - INFO - User input: /move_file copied_test_file.txt moved_test_file.txt
+2023-12-15 02:04:35,535 - AppLogger - INFO - File moved from copied_test_file.txt to moved_test_file.txt
+2023-12-15 02:07:34,798 - AppLogger - INFO - User input: /delete_file renamed_test_file.txt
+2023-12-15 02:07:34,798 - AppLogger - INFO - File deleted at renamed_test_file.txt
+2023-12-15 02:07:44,149 - AppLogger - INFO - User input: /search_files . "*.txt"
+2023-12-15 02:07:44,150 - AppLogger - INFO - Files found matching pattern '*.txt' in .
+2023-12-15 02:08:05,566 - AppLogger - INFO - User input: /get_file_properties moved_test_file.txt
+2023-12-15 02:08:05,566 - AppLogger - INFO - Properties retrieved for file moved_test_file.txt
+2023-12-15 02:08:05,566 - AppLogger - ERROR - Error retrieving properties for file moved_test_file.txt: 'os.stat_result' object has no attribute '__dict__'
+2023-12-15 02:08:21,038 - AppLogger - INFO - User input: /delete_file moved_test_file.txt
+2023-12-15 02:08:21,038 - AppLogger - INFO - File deleted at moved_test_file.txt
+2023-12-15 02:08:29,502 - AppLogger - INFO - User input: /list-commands
+2023-12-15 02:08:35,805 - AppLogger - INFO - User input: /get-cpu-info
+2023-12-15 02:08:41,534 - AppLogger - INFO - User input: /get-ram-info
+2023-12-15 02:08:52,542 - AppLogger - INFO - User input: /get-storage-info
+2023-12-15 02:09:00,366 - AppLogger - INFO - User input: /get-network-info
+2023-12-15 02:09:03,582 - AppLogger - INFO - User input: /quit

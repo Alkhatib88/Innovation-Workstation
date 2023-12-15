@@ -9,13 +9,17 @@ class App:
         self.cli_tools = CliTools(self)
         self.command = Command(self)
         self.input = Input_sys(self, CustomError, DependencyError, UnknownCommandError)
+        self.file_opt = FileOperations(self)
+        self.dir_opt = DirectoryOperations(self)
         self.sql = PostgreSQL(self)
-        self.config = ConfigSystem(self)
-        self.env = EnhancedEnvironmentVariables(self)
-        self.pickel = PickleStorage(self)
         self.encrypt = EncryptionSystem(self)
 
-        self.env_file_path = 'C:/Users/manso/OneDrive/Desktop/python project/config/main.env'  # Path to your main.env file
+        #self.config = ConfigSystem(self)
+        #self.env = EnhancedEnvironmentVariables(self)
+        #self.pickel = PickleStorage(self)
+        
+
+
 
     def setup(self,log_file=None):
         """Sets up the application components."""
@@ -26,14 +30,20 @@ class App:
 
         os.makedirs(os.path.dirname(log_file), exist_ok=True)
 
-        self.logger.setup(name='AppLogger', log_file=log_file, level=logging.INFO)
+        self.logger.setup(name='AppLogger', log_file=log_file, level=logging.DEBUG)
 
         self.system_info.setup_commands()
         self.sql.setup()
         self.cli_tools.setup()
         self.cli.setup()
+        self.file_opt.setup()
+        self.dir_opt.setup()
+
+
+
+        '''
         # Setup ConfigSystem for different parts of the app
-        self.config.setup('default', 'C:/Users/manso/OneDrive/Desktop/python project/config/default_config', 'ini')
+        self.config.setup('default', '/home/coder/python_project/config/default_config', 'ini')
         self.env.setup('main', self.env_file_path, 'file')
 
         try:
@@ -50,7 +60,7 @@ class App:
             self.logger.info(f'{e}')
             self.error_handler.handle_error(e)
 
-
+        '''
 
     def run(self):
 

@@ -98,6 +98,20 @@ class CustomCompleter(Completer):
     def __init__(self, cli_tools_instance):
         self.cli_tools = cli_tools_instance
 
+    def is_typing_argument(self, words):
+        """Determine if the user is currently typing an argument."""
+        if len(words) <= 1:
+            return False
+        command = words[0].lstrip('/')
+        if command not in self.cli_tools.app.command.commands:
+            return False
+        if len(words) == 2:
+            # If there are subcommands, we're not in argument context after the command
+            subcommands = self.cli_tools.get_subcommands(command)
+            return not bool(subcommands)
+        # More than two words means we're past the command and subcommand, so it's an argument
+        return True
+
     def get_completions(self, document, complete_event):
         text = document.text_before_cursor
         words = text.split()
@@ -121,7 +135,7 @@ class CustomCompleter(Completer):
                 if command.startswith(partial_command) and self.cli_tools.app.command.active_commands.get(command, True):
                     yield Completion('/' + command, start_position=-len(words[-1]))
 
-        elif len(words) > 1:
+        elif len(words) > 1 and not self.is_typing_argument(words):
             # Handle subcommands, user has typed at least one character of subcommand
             command = words[0].lstrip('/')
             if command in self.cli_tools.app.command.active_commands and not self.cli_tools.app.command.active_commands[command]:

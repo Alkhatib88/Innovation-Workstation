@@ -145,5 +145,32 @@ class EncryptionSystem:
 
         return second_encryption_key
 
+# Inside the EncryptionSystem class:
+
+    def encrypt_file(self, file_path: str, output_path: str):
+        try:
+            with open(file_path, 'rb') as file:
+                file_data = file.read()
+            encrypted_data = self.encrypt(file_data)
+            with open(output_path, 'wb') as file:
+                file.write(encrypted_data)
+            self.app.logger.info(f"File encrypted at {output_path}")
+        except Exception as e:
+            self.app.logger.error(f"Error encrypting file {file_path}: {e}")
+            raise Exception(f"Error encrypting file: {e}")
+
+    def decrypt_file(self, file_path: str, output_path: str):
+        try:
+            with open(file_path, 'rb') as file:
+                encrypted_data = file.read()
+            decrypted_data = self.decrypt(encrypted_data)
+            with open(output_path, 'wb') as file:
+                file.write(decrypted_data)
+            self.app.logger.info(f"File decrypted at {output_path}")
+        except Exception as e:
+            self.app.logger.error(f"Error decrypting file {file_path}: {e}")
+            raise Exception(f"Error decrypting file: {e}")
+
+
 
     # Add more methods for asymmetric encryption, integrity checks, etc.
